@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import { Monitor, PenTool, X, MapPin, Calendar, Award, Briefcase } from "lucide-react";
+import { Monitor, PenTool, X, MapPin, Calendar, Award, Briefcase, Sparkles } from "lucide-react";
 
 const techInternships = [
   {
@@ -145,41 +143,48 @@ export default function Experience() {
   const internships = activeTab === "tech" ? techInternships : creativeInternships;
 
   return (
-    <main className="bg-[#1B3C53] min-h-screen relative overflow-hidden">
+    <main className="bg-gradient-to-br from-[#0a0a0a] via-[#1a0a1a] to-[#0a0a0a] min-h-screen relative overflow-hidden">
       {/* Background Effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-[#234C6A]/20 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-40 left-20 w-[500px] h-[500px] bg-[#456882]/15 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute top-1/2 right-1/3 w-80 h-80 bg-[#D2C1B6]/10 rounded-full blur-3xl animate-float-slow" />
+        <div className="absolute top-20 right-20 w-96 h-96 bg-[#B95E82]/20 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-40 left-20 w-[500px] h-[500px] bg-[#FFC29B]/15 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute top-1/2 right-1/3 w-80 h-80 bg-[#F39F9F]/10 rounded-full blur-3xl animate-float-slow" />
       </div>
-
-      <Navbar />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-16">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#D2C1B6] to-white bg-clip-text text-transparent mb-4">
-            My Experience
+          <div className="inline-block mb-6">
+            <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-[#B95E82]/20 to-[#F39F9F]/20 border border-[#FFECC0]/30 backdrop-blur-sm">
+              <Sparkles className="w-5 h-5 text-[#FFECC0] animate-pulse" />
+              <span className="text-[#FFECC0] font-semibold">My Journey</span>
+            </div>
+          </div>
+
+          <h1 className="text-5xl md:text-6xl font-bold mb-4">
+            <span className="bg-gradient-to-r from-[#FFECC0] via-[#FFC29B] to-[#F39F9F] bg-clip-text text-transparent">
+              My Experience
+            </span>
           </h1>
           <div className="flex justify-center gap-2 mb-6">
-            <div className="h-1 w-20 bg-[#456882] rounded-full" />
-            <div className="h-1 w-20 bg-[#234C6A] rounded-full" />
-            <div className="h-1 w-20 bg-[#D2C1B6] rounded-full" />
+            <div className="h-1 w-20 bg-gradient-to-r from-[#B95E82] to-[#F39F9F] rounded-full" />
+            <div className="h-1 w-20 bg-gradient-to-r from-[#F39F9F] to-[#FFC29B] rounded-full" />
+            <div className="h-1 w-20 bg-gradient-to-r from-[#FFC29B] to-[#FFECC0] rounded-full" />
           </div>
-          <p className="text-[#D2C1B6]/80 text-lg">
+          <p className="text-[#FFC29B]/80 text-lg">
             A journey through my professional and creative endeavors
           </p>
         </div>
 
         {/* Toggle Buttons */}
         <div className="flex justify-center mb-20">
-          <div className="inline-flex rounded-2xl bg-gradient-to-r from-[#234C6A]/50 to-[#1B3C53]/50 border-2 border-[#456882]/50 p-2 backdrop-blur-md shadow-2xl">
+          <div className="inline-flex rounded-2xl bg-gradient-to-r from-[#B95E82]/20 to-[#F39F9F]/20 border-2 border-[#F39F9F]/30 p-2 backdrop-blur-md shadow-2xl">
             <button
               onClick={() => setActiveTab("tech")}
               className={`flex items-center gap-3 px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 ${
                 activeTab === "tech"
-                  ? "bg-gradient-to-r from-[#456882] to-[#234C6A] text-white shadow-xl shadow-[#456882]/60 scale-105"
-                  : "text-[#D2C1B6] hover:text-white hover:bg-[#456882]/20"
+                  ? "bg-gradient-to-r from-[#B95E82] to-[#F39F9F] text-white shadow-xl shadow-[#B95E82]/60 scale-105"
+                  : "text-[#FFECC0] hover:text-white hover:bg-[#B95E82]/20"
               }`}
             >
               <Monitor className="w-6 h-6" />
@@ -189,8 +194,8 @@ export default function Experience() {
               onClick={() => setActiveTab("creative")}
               className={`flex items-center gap-3 px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 ${
                 activeTab === "creative"
-                  ? "bg-gradient-to-r from-[#D2C1B6] to-[#456882] text-[#1B3C53] shadow-xl shadow-[#D2C1B6]/60 scale-105"
-                  : "text-[#D2C1B6] hover:text-white hover:bg-[#D2C1B6]/20"
+                  ? "bg-gradient-to-r from-[#FFC29B] to-[#FFECC0] text-[#B95E82] shadow-xl shadow-[#FFC29B]/60 scale-105"
+                  : "text-[#FFECC0] hover:text-white hover:bg-[#FFC29B]/20"
               }`}
             >
               <PenTool className="w-6 h-6" />
@@ -202,7 +207,7 @@ export default function Experience() {
         {/* Timeline */}
         <div className="relative">
           {/* Center line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-[#456882]/60 to-transparent hidden md:block" />
+          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-[#F39F9F]/60 to-transparent hidden md:block" />
 
           <div className="space-y-20">
             {internships.map((intern, index) => (
@@ -214,8 +219,8 @@ export default function Experience() {
               >
                 {/* Timeline dot */}
                 <div className="absolute left-1/2 -translate-x-1/2 z-10 hidden md:flex items-center justify-center">
-                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#456882] to-[#234C6A] border-4 border-[#1B3C53] shadow-lg shadow-[#456882]/50 animate-pulse" />
-                  <div className="absolute w-12 h-12 rounded-full bg-[#456882]/20 animate-ping" />
+                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#B95E82] to-[#F39F9F] border-4 border-[#0a0a0a] shadow-lg shadow-[#B95E82]/50 animate-pulse" />
+                  <div className="absolute w-12 h-12 rounded-full bg-[#F39F9F]/20 animate-ping" />
                 </div>
 
                 {/* Card */}
@@ -226,34 +231,34 @@ export default function Experience() {
                 >
                   <div
                     onClick={() => setSelectedIntern(intern)}
-                    className="group p-8 rounded-2xl bg-gradient-to-br from-[#234C6A]/50 to-[#1B3C53]/50 border-2 border-[#456882]/40 hover:border-[#D2C1B6]/70 transition-all duration-500 hover:shadow-2xl hover:shadow-[#456882]/40 hover:-translate-y-3 cursor-pointer backdrop-blur-sm"
+                    className="group p-8 rounded-2xl bg-gradient-to-br from-[#B95E82]/20 to-[#F39F9F]/20 border-2 border-[#F39F9F]/40 hover:border-[#FFECC0]/70 transition-all duration-500 hover:shadow-2xl hover:shadow-[#B95E82]/40 hover:-translate-y-3 cursor-pointer backdrop-blur-sm"
                   >
                     <div className="flex items-start gap-4 mb-4">
-                      <div className="p-3 rounded-xl bg-gradient-to-br from-[#456882]/50 to-[#234C6A]/50 group-hover:from-[#D2C1B6]/50 group-hover:to-[#456882]/50 transition-all duration-300">
-                        <Briefcase className="w-6 h-6 text-[#D2C1B6] group-hover:text-white transition-colors" />
+                      <div className="p-3 rounded-xl bg-gradient-to-br from-[#B95E82]/50 to-[#F39F9F]/50 group-hover:from-[#FFECC0]/50 group-hover:to-[#FFC29B]/50 transition-all duration-300">
+                        <Briefcase className="w-6 h-6 text-[#FFECC0] group-hover:text-[#B95E82] transition-colors" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#D2C1B6] transition-colors">
+                        <h3 className="text-2xl font-bold text-[#FFECC0] mb-2 group-hover:text-white transition-colors">
                           {intern.role}
                         </h3>
-                        <p className="text-[#D2C1B6] font-semibold text-lg">
+                        <p className="text-[#FFC29B] font-semibold text-lg">
                           {intern.company}
                         </p>
                       </div>
                     </div>
 
                     <div className="flex flex-wrap gap-3 mb-4">
-                      <div className="flex items-center gap-2 text-[#D2C1B6]/90 bg-[#456882]/30 px-4 py-2 rounded-lg border border-[#456882]/50">
+                      <div className="flex items-center gap-2 text-[#FFECC0]/90 bg-[#B95E82]/30 px-4 py-2 rounded-lg border border-[#F39F9F]/50">
                         <Calendar className="w-4 h-4" />
                         <span className="text-sm font-medium">{intern.duration}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-[#D2C1B6]/90 bg-[#456882]/30 px-4 py-2 rounded-lg border border-[#456882]/50">
+                      <div className="flex items-center gap-2 text-[#FFECC0]/90 bg-[#F39F9F]/30 px-4 py-2 rounded-lg border border-[#FFC29B]/50">
                         <MapPin className="w-4 h-4" />
                         <span className="text-sm font-medium">{intern.location}</span>
                       </div>
                     </div>
 
-                    <p className="text-[#D2C1B6]/85 leading-relaxed mb-5">
+                    <p className="text-[#FFC29B]/85 leading-relaxed mb-5">
                       {intern.shortDesc}
                     </p>
 
@@ -261,19 +266,19 @@ export default function Experience() {
                       {intern.technologies.slice(0, 3).map((tech: string) => (
                         <span
                           key={tech}
-                          className="px-4 py-2 rounded-lg bg-gradient-to-r from-[#456882]/40 to-[#234C6A]/40 text-[#D2C1B6] text-sm border border-[#456882]/50 font-medium"
+                          className="px-4 py-2 rounded-lg bg-gradient-to-r from-[#FFC29B]/40 to-[#FFECC0]/40 text-[#B95E82] text-sm border border-[#FFC29B]/50 font-medium"
                         >
                           {tech}
                         </span>
                       ))}
                       {intern.technologies.length > 3 && (
-                        <span className="px-4 py-2 rounded-lg bg-gradient-to-r from-[#D2C1B6]/30 to-[#456882]/30 text-[#D2C1B6] text-sm border border-[#D2C1B6]/50 font-medium">
+                        <span className="px-4 py-2 rounded-lg bg-gradient-to-r from-[#B95E82]/30 to-[#F39F9F]/30 text-[#FFECC0] text-sm border border-[#F39F9F]/50 font-medium">
                           +{intern.technologies.length - 3} more
                         </span>
                       )}
                     </div>
 
-                    <div className="mt-6 text-[#D2C1B6]/60 text-sm font-medium flex items-center gap-2 group-hover:text-[#D2C1B6] transition-colors">
+                    <div className="mt-6 text-[#FFC29B]/60 text-sm font-medium flex items-center gap-2 group-hover:text-[#FFECC0] transition-colors">
                       <span>Click to view details</span>
                       <span className="group-hover:translate-x-1 transition-transform">→</span>
                     </div>
@@ -289,31 +294,31 @@ export default function Experience() {
       {selectedIntern && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-6 animate-fade-in">
           <div
-            className="absolute inset-0 bg-[#1B3C53]/96 backdrop-blur-xl"
+            className="absolute inset-0 bg-[#0a0a0a]/96 backdrop-blur-xl"
             onClick={() => setSelectedIntern(null)}
           />
-          <div className="relative bg-gradient-to-br from-[#234C6A]/98 to-[#1B3C53]/98 border-2 border-[#456882]/70 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto backdrop-blur-xl animate-scale-in shadow-2xl shadow-[#456882]/50">
-            <div className="sticky top-0 bg-gradient-to-b from-[#234C6A] to-[#234C6A]/95 p-8 border-b border-[#456882]/50 backdrop-blur-xl z-10">
+          <div className="relative bg-gradient-to-br from-[#B95E82]/30 to-[#F39F9F]/30 border-2 border-[#FFECC0]/50 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto backdrop-blur-xl animate-scale-in shadow-2xl shadow-[#B95E82]/50">
+            <div className="sticky top-0 bg-gradient-to-b from-[#B95E82]/90 to-[#F39F9F]/90 p-8 border-b border-[#FFECC0]/30 backdrop-blur-xl z-10">
               <button
                 onClick={() => setSelectedIntern(null)}
-                className="absolute top-6 right-6 p-3 rounded-xl bg-[#456882]/50 hover:bg-[#456882] border-2 border-[#456882]/60 hover:border-[#D2C1B6] transition-all duration-300 group"
+                className="absolute top-6 right-6 p-3 rounded-xl bg-[#FFECC0]/20 hover:bg-[#FFECC0]/40 border-2 border-[#FFECC0]/40 hover:border-[#FFECC0] transition-all duration-300 group"
               >
-                <X className="w-6 h-6 text-[#D2C1B6] group-hover:text-white transition-colors" />
+                <X className="w-6 h-6 text-[#FFECC0] group-hover:text-white transition-colors" />
               </button>
 
               <h2 className="text-4xl font-bold text-white mb-3 pr-16">
                 {selectedIntern.role}
               </h2>
-              <p className="text-[#D2C1B6] font-bold text-2xl mb-6">
+              <p className="text-[#FFECC0] font-bold text-2xl mb-6">
                 {selectedIntern.company}
               </p>
 
               <div className="flex flex-wrap gap-3">
-                <div className="flex items-center gap-2 text-[#D2C1B6] bg-[#456882]/40 px-5 py-2.5 rounded-lg border border-[#456882]/60">
+                <div className="flex items-center gap-2 text-white bg-black/30 px-5 py-2.5 rounded-lg border border-[#FFECC0]/40">
                   <Calendar className="w-5 h-5" />
                   <span className="font-semibold">{selectedIntern.duration}</span>
                 </div>
-                <div className="flex items-center gap-2 text-[#D2C1B6] bg-[#456882]/40 px-5 py-2.5 rounded-lg border border-[#456882]/60">
+                <div className="flex items-center gap-2 text-white bg-black/30 px-5 py-2.5 rounded-lg border border-[#FFECC0]/40">
                   <MapPin className="w-5 h-5" />
                   <span className="font-semibold">{selectedIntern.location}</span>
                 </div>
@@ -322,16 +327,16 @@ export default function Experience() {
 
             <div className="p-8">
               <div className="mb-8">
-                <h3 className="text-white font-bold text-xl mb-4">Description</h3>
-                <p className="text-[#D2C1B6]/90 leading-relaxed text-lg">
+                <h3 className="text-[#FFECC0] font-bold text-xl mb-4">Description</h3>
+                <p className="text-[#FFC29B]/90 leading-relaxed text-lg">
                   {selectedIntern.description}
                 </p>
               </div>
 
               <div className="mb-8">
-                <h3 className="text-white font-bold text-2xl mb-5 flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-gradient-to-br from-[#456882] to-[#234C6A]">
-                    <Award className="w-6 h-6 text-[#D2C1B6]" />
+                <h3 className="text-[#FFECC0] font-bold text-2xl mb-5 flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-gradient-to-br from-[#FFECC0] to-[#FFC29B]">
+                    <Award className="w-6 h-6 text-[#B95E82]" />
                   </div>
                   Key Achievements
                 </h3>
@@ -339,9 +344,9 @@ export default function Experience() {
                   {selectedIntern.achievements.map((achievement: string, i: number) => (
                     <li
                       key={i}
-                      className="flex items-start gap-4 text-[#D2C1B6]/90 bg-gradient-to-r from-[#456882]/30 to-[#234C6A]/30 p-5 rounded-xl border border-[#456882]/40 hover:border-[#D2C1B6]/50 transition-all duration-300"
+                      className="flex items-start gap-4 text-[#FFC29B]/90 bg-gradient-to-r from-[#B95E82]/20 to-[#F39F9F]/20 p-5 rounded-xl border border-[#F39F9F]/40 hover:border-[#FFECC0]/50 transition-all duration-300"
                     >
-                      <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-[#D2C1B6] to-[#456882] mt-2 flex-shrink-0" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-[#FFECC0] to-[#FFC29B] mt-2 flex-shrink-0" />
                       <span className="leading-relaxed text-base">{achievement}</span>
                     </li>
                   ))}
@@ -349,14 +354,14 @@ export default function Experience() {
               </div>
 
               <div>
-                <h3 className="text-white font-bold text-2xl mb-5">
+                <h3 className="text-[#FFECC0] font-bold text-2xl mb-5">
                   Technologies & Tools
                 </h3>
                 <div className="flex flex-wrap gap-3">
                   {selectedIntern.technologies.map((tech: string) => (
                     <span
                       key={tech}
-                      className="px-5 py-3 rounded-xl bg-gradient-to-r from-[#456882]/60 to-[#234C6A]/60 text-[#D2C1B6] border-2 border-[#456882]/60 font-semibold text-base hover:border-[#D2C1B6]/70 hover:shadow-lg hover:shadow-[#456882]/30 transition-all duration-300"
+                      className="px-5 py-3 rounded-xl bg-gradient-to-r from-[#FFC29B]/60 to-[#FFECC0]/60 text-[#B95E82] border-2 border-[#FFC29B]/60 font-semibold text-base hover:border-[#F39F9F]/70 hover:shadow-lg hover:shadow-[#FFC29B]/30 transition-all duration-300"
                     >
                       {tech}
                     </span>
@@ -367,8 +372,6 @@ export default function Experience() {
           </div>
         </div>
       )}
-
-      <Footer />
 
       <style jsx>{`
         @keyframes pulse-slow {
