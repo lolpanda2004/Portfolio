@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import { Monitor, PenTool, X, MapPin, Calendar, Award, Briefcase, Sparkles } from "lucide-react";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 const techInternships = [
   {
@@ -144,6 +146,8 @@ export default function Experience() {
 
   return (
     <main className="bg-gradient-to-br from-[#0a0a0a] via-[#1a0a1a] to-[#0a0a0a] min-h-screen relative overflow-hidden">
+      <Navbar/>
+      <div className="pt-28"></div> 
       {/* Background Effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-20 w-96 h-96 bg-[#B95E82]/20 rounded-full blur-3xl animate-pulse-slow" />
@@ -403,6 +407,7 @@ export default function Experience() {
           animation: scale-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
       `}</style>
+      <Footer />
     </main>
   );
 }

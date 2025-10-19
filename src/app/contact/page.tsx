@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import { Mail, Linkedin, Send, User, FileText, MessageSquare, CheckCircle, AlertCircle, Sparkles } from "lucide-react";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 interface FormData {
   name: string;
@@ -79,6 +81,8 @@ export default function Contact() {
 
   return (
     <main className="bg-gradient-to-br from-[#0a0a0a] via-[#1a0a1a] to-[#0a0a0a] min-h-screen relative overflow-hidden">
+      <Navbar/>
+      <div className="pt-28"></div> 
       {/* Background Effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-20 w-96 h-96 bg-[#B95E82]/20 rounded-full blur-3xl animate-pulse-slow" />
@@ -313,6 +317,7 @@ export default function Contact() {
           animation: float-slow 6s ease-in-out infinite;
         }
       `}</style>
+      <Footer />
     </main>
   );
 }

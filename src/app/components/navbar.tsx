@@ -58,13 +58,16 @@ export default function Navbar() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#F39F9F] to-[#FFC29B] group-hover:w-full transition-all duration-300"></span>
               </Link>
 
-              {/* Projects Dropdown */}
+              {/* Projects Dropdown (fixed version) */}
               <div
                 className="relative"
                 onMouseEnter={() => setProjectsOpen(true)}
                 onMouseLeave={() => setProjectsOpen(false)}
               >
-                <button className="text-[#FFECC0] hover:text-white flex items-center gap-1 group transition-colors duration-300 font-medium px-2 py-1">
+                <button
+                  onClick={() => setProjectsOpen((prev) => !prev)}
+                  className="text-[#FFECC0] hover:text-white flex items-center gap-1 group transition-colors duration-300 font-medium px-2 py-1"
+                >
                   Projects
                   <ChevronDown
                     size={16}
@@ -73,33 +76,25 @@ export default function Navbar() {
                     }`}
                   />
                 </button>
-                
+
                 {projectsOpen && (
                   <div className="absolute top-full left-0 mt-2 w-48 py-2 rounded-xl bg-[#0a0a0a]/98 backdrop-blur-xl border border-[#F39F9F]/30 shadow-xl animate-dropdown">
-                    <Link
-                      href="/projects/competitions"
-                      className="block px-4 py-3 text-[#FFECC0] hover:text-white hover:bg-gradient-to-r hover:from-[#B95E82]/20 hover:to-[#F39F9F]/20 transition-all"
-                    >
-                      Competitions
-                    </Link>
-                    <Link
-                      href="/projects/personal"
-                      className="block px-4 py-3 text-[#FFECC0] hover:text-white hover:bg-gradient-to-r hover:from-[#F39F9F]/20 hover:to-[#FFC29B]/20 transition-all"
-                    >
-                      Personal
-                    </Link>
-                    <Link
-                      href="/projects/professional"
-                      className="block px-4 py-3 text-[#FFECC0] hover:text-white hover:bg-gradient-to-r hover:from-[#FFC29B]/20 hover:to-[#FFECC0]/20 transition-all"
-                    >
-                      Professional
-                    </Link>
-                    <Link
-                      href="/projects/playmygame"
-                      className="block px-4 py-3 text-[#FFECC0] hover:text-white hover:bg-gradient-to-r hover:from-[#FFC29B]/20 hover:to-[#FFECC0]/20 transition-all"
-                    >
-                      Play my game!
-                    </Link>
+                    {[
+                      { href: "/projects", label: "Overview" },
+                      { href: "/projects/competitions", label: "Competitions" },
+                      { href: "/projects/personal", label: "Personal" },
+                      { href: "/projects/professional", label: "Professional" },
+                      { href: "/projects/playmygame", label: "Play my game!" },
+                    ].map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setProjectsOpen(false)} // 👈 closes dropdown
+                        className="block px-4 py-3 text-[#FFECC0] hover:text-white hover:bg-gradient-to-r hover:from-[#B95E82]/20 hover:to-[#F39F9F]/20 transition-all"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
                   </div>
                 )}
               </div>
@@ -172,6 +167,13 @@ export default function Navbar() {
                   className="block text-[#FFECC0] hover:text-white hover:bg-gradient-to-r hover:from-[#FFC29B]/20 hover:to-[#FFECC0]/20 px-6 py-3 rounded-lg transition-all"
                 >
                   Professional
+                </Link>
+                <Link
+                  href="/projects/playmygame"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-[#FFECC0] hover:text-white hover:bg-gradient-to-r hover:from-[#FFC29B]/20 hover:to-[#FFECC0]/20 px-6 py-3 rounded-lg transition-all"
+                >
+                  Play my game!
                 </Link>
               </div>
 

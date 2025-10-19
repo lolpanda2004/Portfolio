@@ -50,6 +50,8 @@ export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0a0a0a] via-[#1a0a1a] to-[#0a0a0a] relative overflow-hidden">
       {/* Animated Background Elements */}
+      <Navbar/>
+      <div className="pt-28"></div> 
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#B95E82]/10 rounded-full blur-3xl animate-pulse-slow" />
         <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#FFC29B]/10 rounded-full blur-3xl animate-float-slow" />
@@ -236,7 +238,7 @@ export default function ProjectsPage() {
           })}
         </div>
       </div>
-
+      <Footer />
       <style jsx>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
