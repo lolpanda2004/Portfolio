@@ -2,8 +2,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowDown, Code, Palette, Database, Rocket, Github, Linkedin, Mail, ArrowRight, Briefcase, Star, Sparkles } from "lucide-react";
-// import Navbar from "../components/navbar";
-// import Footer from "../components/footer";
+import Navbar from "../app/components/navbar";
+import Footer from "../app/components/footer";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -18,6 +18,7 @@ export default function Home() {
 
   return (
     <main className="bg-gradient-to-br from-[#0a0a0a] via-[#1a0a1a] to-[#0a0a0a] min-h-screen relative overflow-hidden">
+      <Navbar /> 
       {/* Enhanced Animated Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         {/* Mouse follower with gradient */}
@@ -310,6 +311,7 @@ export default function Home() {
           animation: expand 1s ease-out 0.4s backwards;
         }
       `}</style>
+      <Footer />
     </main>
   );
 }

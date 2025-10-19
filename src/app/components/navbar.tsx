@@ -94,6 +94,12 @@ export default function Navbar() {
                     >
                       Professional
                     </Link>
+                    <Link
+                      href="/projects/playmygame"
+                      className="block px-4 py-3 text-[#FFECC0] hover:text-white hover:bg-gradient-to-r hover:from-[#FFC29B]/20 hover:to-[#FFECC0]/20 transition-all"
+                    >
+                      Play my game!
+                    </Link>
                   </div>
                 )}
               </div>
